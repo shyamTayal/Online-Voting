@@ -6,7 +6,7 @@ document.querySelector('#search_result').addEventListener('click',fetchResults)
 
 async function fetchResults(){
     document.querySelector('#candList').innerHTML='';
-    let semester = input.value;
+    let eID = input.value;
     var options = {
         method: 'POST',
         headers: {
@@ -15,7 +15,7 @@ async function fetchResults(){
         body: JSON.stringify({
             my_id:myID,
             my_level:myLevel,
-            election_ID: input
+            election_ID: eID
         })
     }
 
@@ -27,8 +27,8 @@ async function fetchResults(){
             console.log(results);
             var i=1;
             results.forEach(curr => {
-                let html = `<td>${i}</td><td>${curr.enrollment_id}</td><td>${curr.total_credits}</td><td>${curr.gpa}</td>`
-                document.querySelector('#result_table').insertAdjacentHTML('beforeend',html);
+                let html = `<td>${i}</td><td>${curr.candidate_id}</td><td>${curr.party}</td><td>${curr.name}</td><td>${curr.votes}</td>`
+                document.querySelector('#candList').insertAdjacentHTML('beforeend',html);
             });
             i++;
         })
