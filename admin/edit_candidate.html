@@ -45,13 +45,13 @@
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li >
                         <a href="./edit_voter.html">
                             <i class="now-ui-icons ui-1_simple-add"></i>
                             <p>Add/Debar a Voter</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./edit_candidate.html">
                             <i class="now-ui-icons ui-1_simple-add"></i>
                             <p>Add / Remove a Candidate</p>
@@ -75,7 +75,7 @@
         <center>
             <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
                 <div class=" card-header">
-                    <h3>Voter Edit
+                    <h3>Edit Candidates
                     </h3>
                 </div>
                 <div class="card-body"
@@ -84,64 +84,63 @@
                         <i class=" fa fa-plus"></i>
                         Add
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Debar', this, 'green');">
+                    <button class="btn btn-round tablink" onclick="openPage('Remove', this, 'green');">
                         <i class="fa fa-edit"></i>
-                        Debar
+                        Remove
                     </button>
                     <hr>
 
                     <div id="Add" class="tabcontent">
                         <div class="card">
                           <div class="card-header">
-                            <h5 class="title">Add a Voter</h5>
+                            <h5 class="title">Add a Candidate</h5>
                           </div>
                           <div class="card-body">
                             <form>
                             <div class="row">
                                 <div class="col-md-6 pr-1">
                                   <div class="form-group">
-                                    <label>Voter User ID</label>
-                                    <input id="aUserID" type="text" class="form-control" placeholder="Voter ID" value="">
+                                    <label>Candidate ID</label>
+                                    <input id="aCanID" type="text" class="form-control" placeholder="Candidates ID" value="" required>
                                   </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                   <div class="form-group">
-                                    <label>Full Name</label>
-                                    <input id="fullName" type="text" class="form-control" placeholder="Full Name" value="">
+                                    <label>Election ID </label>
+                                    <input id="eID" type="date" class="form-control" placeholder="Election ID (Existing)" value="" required>
                                   </div>
                                 </div>
                             </div>
                               <div class="row">
-
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-8 pr-1">
                                   <div class="form-group">
-                                    <label>Date of Birth</label>
-                                    <input id="dob" type="date" class="form-control" placeholder="DOB" value="">
-                                  </div>
-                                </div>
-                                <div class="col-md-4 px-1">
-                                  <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <input id="phNum" type="number" class="form-control" placeholder="+91 12..." value="">
+                                    <label>Full Name</label>
+                                    <input id="fullName" type="text" class="form-control" placeholder="Full Name" value="" required>
                                   </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                   <div class="form-group">
                                     <label>Gender</label>
-                                    <input id="gender" type="text" class="form-control" placeholder="Male/Female" value="">
+                                    <input id="gender" type="text" class="form-control" placeholder="" value="">
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
-                                  <div class="col">
+                                  <div class="col-md-6 pr-1">
                                     <div class="form-group">
-                                      <label>Address</label>
-                                      <input id="address" type="text" class="form-control" placeholder="Full Address" value="">
+                                      <label>Party Name</label>
+                                      <input id="pName" type="text" class="form-control" placeholder="Party / Independent " value="">
                                     </div>
                                 </div>
+                                <div class="col-md-6 pl-1">
+                                  <div class="form-group">
+                                    <label>Party Logo</label>
+                                    <input id="pLogo" type="text" class="form-control" placeholder="Party Logo" value="">
+                                  </div>
+                              </div>
                               </div>
                             </form>
-                            <button onClick="addVoter()" type="submit" class="btn btn-outline-success">Submit</button>
+                            <button onClick="addCandidate()" type="submit" class="btn btn-outline-success">Submit</button>
                           </div>
                         </div>
                     </div>
@@ -149,14 +148,14 @@
                     <div id="Debar" class="tabcontent">
                         <div class="card">
                           <div class="card-header">
-                            <h5 class="title">Debar Voter</h5>
+                            <h5 class="title">Remove Candidate</h5>
                           </div>
                           <div class="card-body">
                               <form>
-                                    <div class="text-left"><label for="dUserID"> <b>Voter User ID</b></label></div>
-                                    <input type="text" class="form-control" id="dUserID" placeholder="Enter User ID" required>
+                                    <div class="text-left"><label for="dUserID"> <b>Candidate ID</b></label></div>
+                                    <input type="text" class="form-control" id="rCanID" placeholder="Enter User ID" required>
                               </form>
-                              <button onClick="debarVoter()" type="submit" class="btn btn-outline-danger">Submit</button>
+                              <button onClick="removeCandidate()" type="submit" class="btn btn-outline-danger">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -165,7 +164,7 @@
 
         </center>
     </div>
-        <script src="../scripts/admin.edit_voter.js"></script>
+        <script src="../scripts/admin.edit_candidate.js"></script>
         <script>
             function openPage(pageName, elmnt, color) {
                 var i, tabcontent, tablinks;
@@ -184,6 +183,7 @@
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
         </script>
+
         
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
