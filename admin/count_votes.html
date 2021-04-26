@@ -20,6 +20,8 @@
     <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -51,7 +53,7 @@
                             <p>Add/Debar a Voter</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./count_votes.html">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Count Votes</p>
@@ -70,36 +72,56 @@
           <div class="d-flex justify-content-center align-items-center" style="height:80vh;">
             <div class="row">
               <div class="col">
-                <br>
-                <br>
-                <center>
-                    <form>
-                        <div class="input-group no-border" stye="width:400px;">
-                          <input class="form-control" type="text" placeholder="Search..." value="">
-                          <div class="input-group-append">
-                            <div class="input-group-text">
-                              <i class="now-ui-icons ui-1_zoom-bold"></i>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Election Vote count</h4>
+                        <form>
+                            <div class="input-group no-border" >
+                              <input class="form-control" id="elecID" type="text" placeholder="Enter Election ID" value="">
+                              <div class="input-group-append">
+                                    <button class="btn btn-outline-primary btn-round btn-icon" id="search_result">
+                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                    </button>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive" >
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <th>
+                                          S.no.
+                                    </th>
+                                    <th>
+                                          Candidate ID
+                                    </th>
+                                    <th>
+                                          Party
+                                    </th>
+                                    <th>
+                                          Candidate Name
+                                    </th>
 
-                </center>
-                <div class="card" id="listCandidate">
-                  <div>
-                    <center>
-                      <p>
-                        Enter the Election ID
-                      </p>
-                    </center>
-                  </div>
+                                    <th>
+                                          Total Votes
+                                    </th>
+                                </thead>
+                                <hr>
+                                <tbody id="candList" align="center">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
         <script src="../script/detailUpdater.js"></script>
-        <script src="../script/sysadmin.get_notification.js"></script>
+        <script src="../script/admin.count_votes.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>
