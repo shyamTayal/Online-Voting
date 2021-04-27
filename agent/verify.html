@@ -20,8 +20,6 @@
     <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
-
-
 </head>
 
 <body>
@@ -34,7 +32,7 @@
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
-                        <a href="../admin/index.html">
+                        <a href="#">
                             <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
                     </center>
@@ -47,28 +45,10 @@
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
-                    <li>
-                        <a href="./edit_voter.html">
-                            <i class="now-ui-icons ui-1_simple-add"></i>
-                            <p>Add/Debar a Voter</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./edit_candidate.html">
-                            <i class="now-ui-icons ui-1_simple-add"></i>
-                            <p>Add / Remove a Candidate</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./edit_election.html">
-                            <i class="now-ui-icons business_bank"></i>
-                            <p>Edit Election</p>
-                        </a>
-                    </li>
                     <li class="active">
-                        <a href="./count_votes.html">
-                            <i class="now-ui-icons design_bullet-list-67"></i>
-                            <p>Count Votes</p>
+                        <a href="#">
+                            <i class="now-ui-icons ui-1_check"></i>
+                            <p>Verify Voter</p>
                         </a>
                     </li>
                     <li style="position:fixed; bottom:1em; width:200px;">
@@ -84,11 +64,12 @@
             <div class="panel-header panel-header-sm">
             </div>
             <div class="content">
-            <div class="row">
-              <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Election Vote count</h4>
+              <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Voter Verification</h4>
+                            <p class="card-category">Verify details of a Voter</p>
                             <div class="input-group no-border" >
                               <input class="form-control" id="elecID" type="text" placeholder="Enter Election ID" value="">
                               <div class="input-group-append">
@@ -97,42 +78,59 @@
                                     </button>
                               </div>
                             </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive" >
-                            <table class="table">
-                                <thead class="text-primary">
-                                    <th>
-                                          S.no.
-                                    </th>
-                                    <th>
-                                          Candidate ID
-                                    </th>
-                                    <th>
-                                          Party
-                                    </th>
-                                    <th>
-                                          Candidate Name
-                                    </th>
-
-                                    <th>
-                                          Total Votes
-                                    </th>
-                                </thead>
-                                <hr>
-                                <tbody id="candList" align="center">
-
-                                </tbody>
-                            </table>
+                        </div>
+                        <hr>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                        <th>
+                                            S.No.
+                                        </th>
+                                        <th>
+                                            Voter ID
+                                        </th>
+                                        <th>
+                                            Voter Name
+                                        </th>
+                                        <th>
+                                            Date of Birth
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                2001001
+                                            </td>
+                                            <td>
+                                                Ram Lal
+                                            </td>
+                                            <td>
+                                                12-Nov-1992
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-pill btn-success" type="button" name="verify">Verify</button>
+                                                <button class="btn btn-pill btn-danger" type="button" name="discard">Discard</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
+              </div>
             </div>
-          </div>
         </div>
-    </div>
-</div>
-        <script src="../scripts/admin.count_votes.js"></script>
+        </div>
+        <script src="../script/detailUpdater.js"></script>
+        <script src="../script/sysadmin.get_notification.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>

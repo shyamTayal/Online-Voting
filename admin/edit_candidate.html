@@ -32,7 +32,7 @@
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
-                        <a href="../sysadmin/index.html">
+                        <a href="../admin/index.html">
                             <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
                     </center>
@@ -57,12 +57,19 @@
                             <p>Add / Remove a Candidate</p>
                         </a>
                     </li>
+                    <li >
+                        <a href="./edit_election.html">
+                            <i class="now-ui-icons business_bank"></i>
+                            <p>Edit Election</p>
+                        </a>
+                    </li>
                     <li>
                         <a href="./count_votes.html">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Count Votes</p>
                         </a>
                     </li>
+
                     <li style="position:fixed; bottom:1em; width:200px;">
                             <a href="../login.html">
                                 <i class="now-ui-icons sport_user-run"></i>
@@ -72,8 +79,14 @@
                 </ul>
             </div>
         </div>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+            <div class="row">
+              <div class="col">
         <center>
-            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
+            <div class="card " style="margin-top: 20px; padding: 20px;">
                 <div class=" card-header">
                     <h3>Edit Candidates
                     </h3>
@@ -140,7 +153,7 @@
                               </div>
                               </div>
                             </form>
-                            <button onClick="addCandidate()" type="submit" class="btn btn-outline-success">Submit</button>
+                            <button onClick="addCandidate()" type="button" class="btn btn-outline-success">Submit</button>
                           </div>
                         </div>
                     </div>
@@ -155,15 +168,18 @@
                                     <div class="text-left"><label for="dUserID"> <b>Candidate ID</b></label></div>
                                     <input type="text" class="form-control" id="rCanID" placeholder="Enter User ID" required>
                               </form>
-                              <button onClick="removeCandidate()" type="submit" class="btn btn-outline-danger">Submit</button>
+                              <br>
+                              <button onClick="removeCandidate()" type="button" class="btn btn-outline-danger">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </center>
+        </div>
     </div>
+</div>
+</div>
         <script src="../scripts/admin.edit_candidate.js"></script>
         <script>
             function openPage(pageName, elmnt, color) {
@@ -184,7 +200,6 @@
             document.getElementById("defaultOpen").click();
         </script>
 
-        <script src="../scripts/admin.edit_candidate.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>

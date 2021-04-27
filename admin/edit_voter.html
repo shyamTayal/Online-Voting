@@ -32,7 +32,7 @@
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
-                        <a href="../sysadmin/index.html">
+                        <a href="../admin/index.html">
                             <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
                     </center>
@@ -57,6 +57,12 @@
                             <p>Add / Remove a Candidate</p>
                         </a>
                     </li>
+                    <li >
+                        <a href="./edit_election.html">
+                            <i class="now-ui-icons business_bank"></i>
+                            <p>Edit Election</p>
+                        </a>
+                    </li>
                     <li>
                         <a href="./count_votes.html">
                             <i class="now-ui-icons design_bullet-list-67"></i>
@@ -72,110 +78,123 @@
                 </ul>
             </div>
         </div>
-        <center>
-            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
-                <div class=" card-header">
-                    <h3>User Edit
-                    </h3>
-                </div>
-                <div class="card-body"
-                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
-                    <button class="btn btn-round tablink" onclick="openPage('Add', this, 'orange')" id="defaultOpen">
-                        <i class=" fa fa-plus"></i>
-                        Add
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Debar', this, 'green');">
-                        <i class="fa fa-edit"></i>
-                        Debar
-                    </button>
-                    <hr>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+            <div class="row">
+              <div class="col">
+                <center>
+                    <div class="card d-flex" style="margin-top: 20px; padding: 20px;">
+                        <div class=" card-header">
+                            <h3>User Edit
+                            </h3>
+                        </div>
+                        <div class="card-body"
+                            style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                            <button class="btn btn-round tablink" onclick="openPage('Add', this, 'orange')" id="defaultOpen">
+                                <i class=" fa fa-plus"></i>
+                                Add
+                            </button>
+                            <button class="btn btn-round tablink" onclick="openPage('Debar', this, 'green');">
+                                <i class="fa fa-edit"></i>
+                                Debar
+                            </button>
+                            <hr>
 
-                    <div id="Add" class="tabcontent">
-                        <div class="card">
-                          <div class="card-header">
-                            <h5 class="title">Add a User</h5>
-                          </div>
-                          <div class="card-body">
-                            <form>
-                            <div class="row">
-                                <div class="col">
-                                  <div class="form-group">
-                                    <label>User ID</label>
-                                    <input id="aUserID" type="text" class="form-control" placeholder="User ID" value="">
+                            <div id="Add" class="tabcontent">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="title">Add a User</h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>User ID</label>
+                                                <input id="aUserID" type="text" class="form-control" placeholder="User ID" value="">
+                                              </div>
+                                            </div>
+
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Password</label>
+                                              <input id="password" type="password" class="form-control" placeholder="password" value="">
+                                            </div>
+                                          </div>
+                                        </div>
+                                    <br>
+                                        <div class="form-group">
+                                            <label><b>Role</b></label>
+                                            <div class="form-check">
+                                                <div class="row">
+                                                  <div class="col">
+                                                    <input class="form-check-input" type="radio" data-color="orange" id="voterRole" name="role" value=0>
+                                                    <label class="form-check-label" for="voterRole">Voter</label>
+                                                  </div>
+                                                  <div class="col">
+                                                    <input class="form-check-input" type="radio" data-color="orange" id="agentRole" name="role" value=1>
+                                                    <label class="form-check-label" for="agentRole">Poling Agent</label>
+                                                  </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                      <!-- <div class="row">
+
+                                        <div class="col-md-4 pr-1">
+                                          <div class="form-group">
+                                            <label>Date of Birth</label>
+                                            <input id="dob" type="date" class="form-control" placeholder="DOB" value="">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4 px-1">
+                                          <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input id="phNum" type="number" class="form-control" placeholder="+91 12..." value="">
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4 pl-1">
+                                          <div class="form-group">
+                                            <label>Gender</label>
+                                            <input id="gender" type="text" class="form-control" placeholder="Male/Female" value="">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Address</label>
+                                              <input id="address" type="text" class="form-control" placeholder="Full Address" value="">
+                                            </div>
+                                        </div> -->
+                                    </form>
+                                    <button onClick="addVoter()" type="submit" class="btn btn-outline-success">Submit</button>
                                   </div>
                                 </div>
-
                             </div>
-                            <div class="row">
-                              <div class="col">
-                                <div class="form-group">
-                                  <label>Password</label>
-                                  <input id="password" type="password" class="form-control" placeholder="password" value="">
-                                </div>
-                              </div>
-                            </div>
-                            <br>
 
-                            <div class="text-left"><label for="inputRole"><b>Role</b></label><br></div>
-                            <input type="radio" data-color="orange" id="adminRole" name="role"
-                                  value=0>
-                            <label for="adminRole">Voter</label>
-                            <input type="radio" data-color="orange" id="prevRole" name="role"
-                                  value=1>
-                            <label for="prevRole">Poling Agent</label>
-                              <!-- <div class="row">
-
-                                <div class="col-md-4 pr-1">
-                                  <div class="form-group">
-                                    <label>Date of Birth</label>
-                                    <input id="dob" type="date" class="form-control" placeholder="DOB" value="">
+                            <div id="Debar" class="tabcontent">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="title">Debar User</h5>
                                   </div>
-                                </div>
-                                <div class="col-md-4 px-1">
-                                  <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <input id="phNum" type="number" class="form-control" placeholder="+91 12..." value="">
-                                  </div>
-                                </div>
-                                <div class="col-md-4 pl-1">
-                                  <div class="form-group">
-                                    <label>Gender</label>
-                                    <input id="gender" type="text" class="form-control" placeholder="Male/Female" value="">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
-                                      <label>Address</label>
-                                      <input id="address" type="text" class="form-control" placeholder="Full Address" value="">
+                                  <div class="card-body">
+                                      <form>
+                                            <div class="text-left"><label for="dUserID"> <b>User ID</b></label></div>
+                                            <input type="text" class="form-control" id="dUserID" placeholder="Enter User ID" required>
+                                      </form>
+                                      <button onClick="debarVoter()" type="submit" class="btn btn-outline-danger">Submit</button>
                                     </div>
-                                </div> -->
-                              </div>
-                            </form>
-                            <button onClick="addVoter()" type="submit" class="btn btn-outline-success">Submit</button>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div id="Debar" class="tabcontent">
-                        <div class="card">
-                          <div class="card-header">
-                            <h5 class="title">Debar User</h5>
-                          </div>
-                          <div class="card-body">
-                              <form>
-                                    <div class="text-left"><label for="dUserID"> <b>User ID</b></label></div>
-                                    <input type="text" class="form-control" id="dUserID" placeholder="Enter User ID" required>
-                              </form>
-                              <button onClick="debarVoter()" type="submit" class="btn btn-outline-danger">Submit</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </center>
                 </div>
             </div>
-
-        </center>
+        </div>
+        </div>
     </div>
         <script src="../scripts/admin.edit_voter.js"></script>
         <script>
