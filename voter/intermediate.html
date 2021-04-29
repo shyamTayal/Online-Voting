@@ -7,7 +7,7 @@
     <!-- <link rel="icon" type="image/png" href="./assets/img/favicon.png"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        AMSAAA
+        Online Voting - Vote
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
@@ -23,28 +23,45 @@
 </head>
 
 <body>
-    <!-- Start your project here-->
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
+
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
-                        <a href="../voter/vote.html">
+                        <a href="../voter/index.html">
                             <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
                     </center>
                 </div>
                 <a class="simple-text logo-normal text-center" id="currUserInfo">
-                    <span id="currUserName">Shyam tayal</span>
+                    <span id="currUserName">Arvind</span>
                     <br>
-                    <span id="currUserLevel">System Admin</span>
+                    <span id="currUserLevel">Voter</span>
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
                 <ul class="nav">
+                    <li> <center> <p style="color:white;">Election List</p> </center> </li>
+                    <br>
+                    <li>
+                        <a >
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Panchayat</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Lok Sabha</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Vidhan Sabha</p>
+                        </a>
+                    </li>
                     <li style="position:fixed; bottom:1em; width:200px;">
                         <a href="../login.html">
                             <i class="now-ui-icons sport_user-run"></i>
@@ -54,9 +71,18 @@
                 </ul>
             </div>
         </div>
-        
-        <script src="../script/detailUpdater.js"></script>
-        <script src="../script/sysadmin.get_notification.js"></script>
+
+
+        <div class="content">
+            <div style ="padding:350px 0;text-align:center">
+                <h1>Please wait for verification ......</h1>
+
+            </div>
+
+        </div>
+        </div>
+
+
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>
