@@ -55,6 +55,16 @@ async function elections(array){
     })
     // console.log(html)
     document.querySelector('.nav').innerHTML+=html;
+    
+    html+=`<li style="position:fixed; bottom:1em; width:200px;">
+            <a href="../login.html">
+            <i class="now-ui-icons sport_user-run"></i>
+            <p>Logout</p>
+        
+            </a>
+            </li>`;
+    document.querySelector('.nav').innerHTML+=html;
+
 }
 
 
