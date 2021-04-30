@@ -73,8 +73,8 @@
                             <div class="input-group no-border" >
                               <input class="form-control" id="elecID" type="text" placeholder="Enter Election ID" value="">
                               <div class="input-group-append">
-                                    <button class="btn btn-outline-primary btn-round btn-icon" id="search_result">
-                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                    <button class="btn btn-outline-primary btn-round btn-icon" class="search_result">
+                                        <i class="search-result now-ui-icons ui-1_zoom-bold"></i>
                                     </button>
                               </div>
                             </div>
@@ -100,8 +100,8 @@
                                             Action
                                         </th>
                                     </thead>
-                                    <tbody>
-                                        <tr>
+                                    <tbody id="voter-list">
+                                        <!-- <tr>
                                             <td>
                                                 1
                                             </td>
@@ -118,7 +118,7 @@
                                                 <button class="btn btn-pill btn-success" type="button" name="verify">Verify</button>
                                                 <button class="btn btn-pill btn-danger" type="button" name="discard">Discard</button>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -129,8 +129,7 @@
             </div>
         </div>
         </div>
-        <script src="../script/detailUpdater.js"></script>
-        <script src="../script/sysadmin.get_notification.js"></script>
+        <script src="../scripts/poling.verify.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>
