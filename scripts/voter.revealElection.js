@@ -27,8 +27,14 @@ function findlocation(event){
         document.querySelector('.give-vote').style.display="none";
 
         document.querySelector('.fill-info').style.display="block";
+        document.querySelector('.verifyVoter').classList.add(Class[1]);
+        // console.log(Class)
+
     }else if(Class[0]==="vote"){
         giveVote(Class[2],Class[1]);
+    }else if(Class[0]==="verifyVoter"){
+        // console.log(Class)
+        forVerification(event.target.classList[4])
     }
 
 }
@@ -99,4 +105,44 @@ async function giveVote(election_id,candidate_id){
         })
     }
     
+}
+
+async function forVerification(election_id){
+    var user_id = localStorage.getItem("user_id");
+    var name = document.getElementById('fullname').value;
+    var dob = document.getElementById('dob').value;
+    var address = document.getElementById('address').value;
+    var phone_number = document.getElementById('phNo').value;
+
+    if(confirm("Are you Sure, you want to proceed!!")) {
+        var options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                election_id: election_id,
+                user_id:user_id,
+                name:name,
+                dob:dob,
+                address:address,
+                phone_number:phone_number
+            })
+        }
+        console.log(options)
+        fetch('http://localhost:5440/voter/forverification',options)
+        .then((res)=>{
+            res.json()
+            .then((data)=>{
+                document.querySelector('.fill-info').style.display="none";
+                document.querySelector('.wait').style.display="none";
+                document.querySelector('.give-vote').style.display="none";
+                location.reload();
+            })
+        })
+        .catch(err => {
+            // console.error(err);
+            alert("unable to Submit Info");
+        })
+    }
 }
